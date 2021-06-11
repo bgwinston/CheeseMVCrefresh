@@ -1,5 +1,5 @@
 # CheeseMVCrefresh
-Web application completed in Launchcode of 2019.  
+Cheese List Web Application.  
 Uses-
 *Java Programming Language
 *Springboot

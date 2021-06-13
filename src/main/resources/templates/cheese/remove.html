@@ -4,19 +4,16 @@
 
 <body>
 <h1 th:text="${title}">Default Title</h1>
+<nav th:replace="fragments :: navigation"></nav>
 
-<form method="post" style="max-width:600px;">
-  <table class="table">
-     <tr>
-        <th>Name</th>
-        <th>Description</th>
-     </tr>
+<form method="post">
 
-     <tr th:each="cheese : ${cheeses}" class="checkbox">
-         <td th:text="${cheese.cheeseName}"></td>
-        <td th:text="${cheese.cheeseDescription}"></td>
-     </tr>
-  </table>
+    <div th:each="cheese : ${cheeses}" class="checkbox">
+        <input type="checkbox" name="cheese" th:value="${cheese}" th:id="${cheese}"/>
+        <label th:for="${cheese}" th:text="${cheese}"></label>
+        <br />
+    </div>
+    <input type="submit" value="Remove Cheese" />
 </form>
 </body>
 </html>

@@ -39,12 +39,13 @@ public class cheeseController {
    @RequestMapping(value="remove",method=RequestMethod.GET)
        public String removeCheese(Model model){
        model.addAttribute("title","Remove Cheese");
-        return "cheese/remove";
+       model.addAttribute("cheeses", cheeses.keySet()); //returns all values in cheeses hashmap
+       return "cheese/remove";
    }
 
     @RequestMapping(value="remove",method=RequestMethod.POST)
-    public String removeCheesePost(Model model) {//@RequestParam String cheeseName, @RequestParam String cheeseDescription) {
-                model.addAttribute("title","Remove Cheese");
+    public String removeCheesePost(@RequestParam HashMap<String, String> cheeses ) {
+            cheeses.remove(cheeses);
         return "redirect:";
     }
 
